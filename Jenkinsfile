@@ -24,7 +24,6 @@ pipeline {
         }
         stage("Déploiement sur staging") {
             steps {
-		sh "sudo usermod -aG docker jenkins"
                 sh "docker run -d --rm -p 8888:8080 --name calculator localhost:5000/calculator"
             }
         }
