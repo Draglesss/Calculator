@@ -32,11 +32,12 @@ sh "./gradlew jacocoTestCoverageVerification"
 stage("Déploiement sur staging") {
  steps {
  sh "docker run -d --rm -p 8888:8080 --name calculator localhost:5000/calculator"
+ echo "Depolyed to staging";
  }
 }
 stage("Test d'acceptation") {
  steps {
- sleep 60
+ echo "TEST D'ACCEPTATION : ";
  sh "chmod +x acceptance_test.sh && ./acceptance_test.sh"
  }
 }
