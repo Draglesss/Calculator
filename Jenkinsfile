@@ -71,7 +71,7 @@ pipeline {
 			sh "docker stop calculator"
 		}
 	}
-	}
+	
     }
 }
 
