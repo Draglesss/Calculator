@@ -63,12 +63,12 @@ pipeline {
 	}
 	post {
 		always {
-			mail to: 'gamers0901@gmail.com',
+			mail to: 'otmanefatteh@hotmail.com',
 			subject: "Cher lion Votre compilation est terminée: ${currentBuild.fullDisplayName}",
 			body: " Votre build est accompli, Veuilez vérifier: ${env.BUILD_URL}"
 		}
 		success{
-			sh "docker stop calculator"
+			sh "docker stop jenkins_calculator"
 		}
 	}
 	
