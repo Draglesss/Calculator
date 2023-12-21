@@ -20,6 +20,8 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'io.cucumber:cucumber-java:7.14.1'
+	testImplementation 'io.cucumber:cucumber-junit:7.14.1'
 }
 
 tasks.named('test') {
@@ -34,4 +36,11 @@ jacocoTestCoverageVerification {
  }
  }
  }
+} 
+tasks.register('acceptanceTest', Test) {
+include '/acceptance/'
+systemProperties System.getProperties()
+}
+test {
+exclude '/acceptance/'
 } 
