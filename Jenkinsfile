@@ -51,6 +51,7 @@ pipeline {
 	}
         stage("Déploiement sur staging") {
             steps {
+		sh "docker container stop jenkins_calculator"
                 sh "docker run -d --rm -p 8889:8080 --name jenkins_calculator localhost:5000/calculator"
             }
         }
