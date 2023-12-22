@@ -68,7 +68,7 @@ pipeline {
 			body: " Votre build est accompli, Veuilez vérifier: ${env.BUILD_URL}"
 		}
 		success{
-			sh "docker stop jenkins_calculator"
+			sh "docker stop jenkins_feature_calculator"
 		}
 	}
 	
